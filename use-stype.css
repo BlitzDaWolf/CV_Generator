@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    print-color-adjust: exact;
+}
+
+body {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    padding-left: 10px;
+}
+
+h2 {
+    border-top: 1px solid black;
+}
+
+.skill-level {
+    display: flex;
+}
+
+.skill-level > div {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+}
+
+.filled {
+    background-color: grey;
+}
+
+.experience {
+    display: flex;
+    padding: 5px 10px;
+}
+
+.experience > div {
+    margin-right: 25px;
+}
+
+.tags {
+    display: flex;
+}
+
+span {
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    color: #4a4a4a;
+    display: inline-flex;
+    font-size: .75em;
+    height: 2em;
+    justify-content: center;
+    line-height: 1.5;
+    padding-left: .75em;
+    padding-right: .75em;
+    white-space: nowrap;
+    margin: 0 0.2em;
+}
+
+.prj-card > div {
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+.skills {
+    padding-left: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 110px;
+}
+
+.skill {
+    margin: 5px 0;
+    display: flex;
+}
+
+.skill > p {
+    width: 6em;
+}
+
+.logo {
+    width: 1.2em;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 110px;
+    
+}
+
+.link-p {
+    display: contents;
+    font-size: 1.2em;
+}

@@ -1,0 +1,39 @@
+{
+    "firstName": "<First name>",
+    "lastName": "<last name>",
+    "driving": [
+        "B"
+    ],
+    "links": {
+        "mail": "<Email link>",
+        "github": "https://github.com/<Username>",
+        "linkedin": "https://www.linkedin.com/in/<Profile>/"
+    },
+    "education": [
+        {
+            "school": "<School name>",
+            "startDate": "01/09/2012",
+            "endDate": "1/06/2022",
+            "finished": true,
+            "degree": "<Degree>"
+        }
+    ],
+    "Skils": [
+        {
+            "name": "C#",
+            "score": 4
+        }
+    ],
+    "lang": [
+        "English"
+    ],
+    "experience": [
+        {
+            "startDate": "01/01/2021",
+            "endDate": "01/12/2022",
+            "type": "<Role>",
+            "location": "<Company name>",
+            "description": "<Short work description>"
+        }
+    ]
+}

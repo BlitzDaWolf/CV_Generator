@@ -15,6 +15,7 @@ const octokit = new Octokit({
 const mainLoop = async () => {
     const userData = (await octokit.request('GET /users/blitzdawolf', {})).data;
     const repoData = (await octokit.request(`GET ${userData.repos_url}`, {})).data;
+    console.log(repoData.map(x => x.name));
     const filtered = repoData.filter(x => x.owner.login == userData.login
         && x.private == false
         && x.fork == false
@@ -40,35 +41,64 @@ const mainLoop = async () => {
             "updated_at": x.updated_at
         }
     });
-    fs.writeFile("./out/index.html", a.replace("$content", createBody(final_projects)), e => {
-
-    });
-    console.log(createBody(final_projects));
+    fs.writeFile("./out/index.html", a.replace("$content", createBody(final_projects)), e => {});
+    console.log(final_projects);
     // console.log(GenerateProject(final_projects[0].name, final_projects[0].description, final_projects[0].Languages));
     // console.log(final_projects.map(x => GenerateProject(x.name, x.description, x.Languages)).join(""));
 }
 
-const t = [{
-    name: 'GroepQBI',
-    description: 'Intro bi groep Q SSIS',
-    Languages: {},
-    created_at: '2020-12-02T14:58:55Z',
-    updated_at: '2020-12-02T15:52:28Z'
-  },
-  {
-    name: 'Tennis',
-    description: 'AP Opdracht voor programeren dot net',
-    Languages: { 'C#': 78607, TSQL: 6493 },
-    created_at: '2020-10-07T00:25:36Z',
-    updated_at: '2020-11-16T12:20:55Z'
-  },
-  {
-    name: 'node-dependencies',
-    description: 'Small project to see all internal project dependencies',
-    Languages: { 'C#': 7598 },
-    created_at: '2020-10-26T00:14:32Z',
-    updated_at: '2020-10-26T00:39:56Z'
-  }]
+const t = [
+    {
+      name: 'InventorySystem',
+      description: 'An Basic inventory system API Writen in C#',
+      Languages: { 'C#': 100 },
+      created_at: '2023-09-13T12:40:18Z',
+      updated_at: '2023-09-18T22:06:12Z'
+    },
+    {
+      name: 'CV_Generator',
+      description: 'CV generator using nodejs with Octokit.',
+      Languages: { JavaScript: 100 },
+      created_at: '2023-09-18T16:26:37Z',
+      updated_at: '2023-09-18T16:29:19Z'
+    },
+    {
+      name: 'CalanderCSharp',
+      description: 'Calander app using C# ASP.NET With EF',
+      Languages: { 'C#': 98, Dockerfile: 2 },
+      created_at: '2023-09-11T16:56:42Z',
+      updated_at: '2023-09-12T14:28:53Z'
+    },
+    {
+      name: 'LeetCode-Tests',
+      description: 'My repository to test ',
+      Languages: { Java: 51, 'C#': 49 },
+      created_at: '2023-08-24T22:30:52Z',
+      updated_at: '2023-08-30T21:57:00Z'
+    },
+    {
+      name: 'MACDMulti',
+      description: 'Trading strategy using the MACD indicator',
+      Languages: { 'C#': 100 },
+      created_at: '2023-04-20T12:19:55Z',
+      updated_at: '2023-04-20T12:20:32Z'
+    },
+    {
+      name: 'MerpEngine',
+      description: 'Merpengine is a program first 2D game engine',
+      Languages: { 'C#': 100 },
+      created_at: '2020-01-05T01:30:16Z',
+      updated_at: '2021-05-25T16:09:19Z'
+    },
+    {
+      name: 'GroepQBI',
+      description: 'Intro bi groep Q SSIS',
+      Languages: {},
+      created_at: '2020-12-02T14:58:55Z',
+      updated_at: '2020-12-02T15:52:28Z'
+    }
+  ]
 
-// console.log(createBody(t));
-mainLoop()
+fs.copyFile("./use-style.css", "./out/mystyle.css");
+fs.writeFile("./out/index.html", a.replace("$content", createBody(t)), e => {});
+// mainLoop()

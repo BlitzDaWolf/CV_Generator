@@ -1,6 +1,4 @@
-
-
-const GenerateProject = (name, description, Languages) => {
+const GenerateProject = (name, description, Languages, gitlink) => {
     let total = 0;
     Object.keys(Languages).forEach(x => {
         total+=Languages[x];
@@ -9,9 +7,9 @@ const GenerateProject = (name, description, Languages) => {
         Languages[x] = Math.round(Languages[x] / total * 100);
     });
     return `<div class="prj-card">
-        <h3 class="prj-name">${name}</h3>
+        <a href="${gitlink}/${name}"><h3 class="prj-name">${name}</h3></a>
         <div class="prj-dsc">${description}</div>
-        <div>${Object.keys(Languages).map(x => `<span class="">${x} ${Languages[x]}%</span>`)}</div>
+        <div class="tags">${Object.keys(Languages).map(x => `<span class="">${Languages[x]}% ${x}</span>`).join("")}</div>
     </div>`;
 }
 
